@@ -102,16 +102,21 @@
       class Juego {
         constructor() {
           this.inicializar()
+          this.generarSecuencia()
         }
 
         inicializar() {
           btnEmpezar.classList.add('hide')
         }
+
+        // Esta función va a generar un array de números random. El 10 indica que es de 10 números. El fill los llena con 0 inicialmente.
+        generarSecuencia() {
+          this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random() * 4))
+        }
       }
 
       function empezarJuego() {
-        // var juego = new Juego()
-        alert('El juego inicia')
+        window.juego = new Juego()  
       }
     </script>
   </body>
